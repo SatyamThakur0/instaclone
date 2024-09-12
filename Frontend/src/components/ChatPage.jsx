@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { useRef, useState } from "react";
-import styles from "./post.module.css";
+import styles from "./Post.module.css";
 import { chatAction } from "@/store/chatSlice";
 import Messages from "./Messages";
 

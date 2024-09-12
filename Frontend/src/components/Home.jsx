@@ -1,7 +1,6 @@
 import Feed from "./Feed";
 import RightSidebar from "./RightSidebar";
 import styles from "./Home.module.css";
-import GetSuggestedUsers from "./GetSuggestedUsers";
 
 const Home = () => {
     return (
