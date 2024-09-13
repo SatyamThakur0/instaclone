@@ -23,7 +23,6 @@ const Posts = () => {
             )
                 .then((res) => res.json())
                 .then((res) => {
-                    // console.log(res);
                     if (res.success)
                         dispatch(postsActions.getAllPost(res.allPosts));
                     // else navigate("/login");
