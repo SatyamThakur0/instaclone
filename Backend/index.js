@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 const corsOption = {
     // origin: "http://localhost:5173",
-    origin: "https://instaclone-omega-two.vercel.app/",
+    origin: "https://instaclone-omega-two.vercel.app",
     credentials: true,
 };
 app.use(cors(corsOption));
