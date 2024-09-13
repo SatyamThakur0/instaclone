@@ -25,7 +25,7 @@ const Posts = () => {
                     // console.log(res);
                     if (res.success)
                         dispatch(postsActions.getAllPost(res.allPosts));
-                    else navigate("/login");
+                    // else navigate("/login");
                 });
         } catch (error) {
             console.log(error);
