@@ -89,7 +89,8 @@ export const loginUser = async (req, res) => {
                     httpOnly: true, // Prevents JavaScript from accessing the cookie
                     secure: process.env.NODE_ENV === "production", // Only set Secure flag in production
                     sameSite: "None", // Allows cross-site cookies (important if using different domains)
-                    domain: "https://instaclone-omega-two.vercel.app/",
+                    // domain: "https://instaclone-omega-two.vercel.app/",
+                    secure: true,
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
