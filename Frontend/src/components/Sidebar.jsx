@@ -37,11 +37,14 @@ const Sidebar = () => {
     const handleLogout = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:8000/api/user/logout", {
-                method: "POSt",
-                headers: { "content-type": "application/json" },
-                credentials: "include",
-            });
+            const res = await fetch(
+                "https://instaclone-backend-nu.vercel.app/api/user/logout",
+                {
+                    method: "POSt",
+                    headers: { "content-type": "application/json" },
+                    credentials: "include",
+                }
+            );
             const data = await res.json();
             if (data.success) {
                 dispatch(userActions.setNull());
@@ -59,7 +62,7 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "http://localhost:8000/api/notification/allnotificactions",
+            "https://instaclone-backend-nu.vercel.app/api/notification/allnotificactions",
             {
                 method: "GET",
                 credentials: "include",

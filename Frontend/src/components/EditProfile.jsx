@@ -48,7 +48,7 @@ const EditProfile = () => {
             formData.append("bio", input.bio);
             formData.append("gender", input.gender);
             let res = await fetch(
-                "http://localhost:8000/api/user/profile/edit",
+                "https://instaclone-backend-nu.vercel.app/api/user/profile/edit",
                 {
                     method: "POST",
                     credentials: "include",
@@ -57,7 +57,6 @@ const EditProfile = () => {
             );
             res = await res.json();
             console.log(res);
-            
 
             if (res.success) {
                 navigate(`/profile/${user._id}`);

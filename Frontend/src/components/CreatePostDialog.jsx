@@ -38,13 +38,12 @@ const CreatePostDialog = ({ open, setOpen }) => {
     const postImage = async () => {
         setImgPosted(false);
         try {
-
             const formData = new FormData();
             formData.append("caption", captionRef.current.value);
             if (imagePreview)
                 formData.append("image", inputRef.current.files[0]);
             const res = await fetch(
-                "http://localhost:8000/api/post/postimage",
+                "https://instaclone-backend-nu.vercel.app/api/post/postimage",
                 {
                     method: "POST",
                     credentials: "include",

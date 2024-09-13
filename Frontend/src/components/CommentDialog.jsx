@@ -25,9 +25,12 @@ const CommentDialog = ({
     const [inptext, setInptext] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/post/comments/${post._id}`, {
-            credentials: "include",
-        })
+        fetch(
+            `https://instaclone-backend-nu.vercel.app/api/post/comments/${post._id}`,
+            {
+                credentials: "include",
+            }
+        )
             .then((res) => res.json())
             .then((res) => {
                 setComments(res.Comments);

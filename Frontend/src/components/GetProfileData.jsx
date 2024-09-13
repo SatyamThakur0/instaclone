@@ -5,9 +5,12 @@ import { useDispatch } from "react-redux";
 export const GetProfileData = ({ userId }) => {
     const dispatch = useDispatch();
     useEffect(() => {
-        fetch(`http://localhost:8000/api/post/posts/${userId}`, {
-            credentials: "include",
-        })
+        fetch(
+            `https://instaclone-backend-nu.vercel.app/api/post/posts/${userId}`,
+            {
+                credentials: "include",
+            }
+        )
             .then((res) => res.json())
             .then((res) => {
                 dispatch(userActions.setProfilePost(res.userPosts));
