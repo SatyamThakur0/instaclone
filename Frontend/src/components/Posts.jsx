@@ -18,6 +18,7 @@ const Posts = () => {
                 "https://instaclone-backend-nu.vercel.app/api/post/allposts",
                 {
                     credentials: "include",
+                    headers: { "Content-Type": "application/json" },
                 }
             )
                 .then((res) => res.json())
