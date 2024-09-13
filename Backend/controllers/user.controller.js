@@ -88,7 +88,7 @@ export const loginUser = async (req, res) => {
                 .cookie("token", token, {
                     httpOnly: true, // Prevents JavaScript from accessing the cookie
                     sameSite: "None", // Allows cross-site cookies (important if using different domains)
-                    
+                    secure: process.env.NODE_ENV === 'production',
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
