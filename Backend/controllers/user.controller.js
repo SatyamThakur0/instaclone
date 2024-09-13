@@ -86,9 +86,10 @@ export const loginUser = async (req, res) => {
             return res
                 .status(200)
                 .cookie("token", token, {
-                    httpOnly: true,
-                    secure: process.env.NODE_ENV === "production", // Set to true in production (HTTPS)
-                    sameSite: "None", // Allows cookies to be sent across different domains
+                    httpOnly: true, // Prevents JavaScript from accessing the cookie
+                    secure: process.env.NODE_ENV === "production", // Only set Secure flag in production
+                    sameSite: "None", // Allows cross-site cookies (important if using different domains)
+                    domain: "https://instaclone-omega-two.vercel.app/",
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
