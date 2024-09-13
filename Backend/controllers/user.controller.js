@@ -85,7 +85,11 @@ export const loginUser = async (req, res) => {
             };
             return res
                 .status(200)
-                .cookie("token", token)
+                .cookie("token", token, {
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === "production", // Set to true in production (HTTPS)
+                    sameSite: "None", // Allows cookies to be sent across different domains
+                })
                 .json({
                     message: `Welcome, ${User.name}`,
                     success: true,
