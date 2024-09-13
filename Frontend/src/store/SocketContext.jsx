@@ -14,6 +14,9 @@ export const SocketProvider = ({ children }) => {
             query: {
                 userId: user?._id,
             },
+            methods: ["GET", "POST"],
+            allowedHeaders: ["Authorization"],
+            credentials: true,
         });
         setSocket(Socket);
     }, []);
