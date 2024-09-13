@@ -9,6 +9,7 @@ export const SocketProvider = ({ children }) => {
     const { user } = useSelector((store) => store.user);
     const [socket, setSocket] = useState(null);
     useEffect(() => {
+        // const Socket = io("https://instaclone-backend-nu.vercel.app", {
         const Socket = io("https://instaclone-backend-nu.vercel.app", {
             transports: ["websocket"],
             query: {
