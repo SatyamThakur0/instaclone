@@ -18,14 +18,14 @@ const Posts = () => {
                 "https://instaclone-backend-nu.vercel.app/api/post/allposts",
                 {
                     credentials: "include",
-                    headers: { "Content-Type": "application/json" },
+                    
                 }
             )
                 .then((res) => res.json())
                 .then((res) => {
                     if (res.success)
                         dispatch(postsActions.getAllPost(res.allPosts));
-                    else navigate("/login");
+                    // else navigate("/login");
                 });
         } catch (error) {
             console.log(error);
