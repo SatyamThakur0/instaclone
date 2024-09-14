@@ -2,10 +2,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import styles from "./Signup.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "@/store/userSlice";
 
 const Login = () => {
@@ -14,7 +14,15 @@ const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const { user } = useSelector((store) => store.user);
+
     const [fetched, setFetched] = useState(true);
+
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, []);
 
     const loginHandler = async (e) => {
         e.preventDefault();

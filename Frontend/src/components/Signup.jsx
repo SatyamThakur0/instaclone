@@ -2,9 +2,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import styles from "./Signup.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Signup = () => {
     const usernameRef = useRef();
@@ -14,6 +15,12 @@ const Signup = () => {
 
     const [fetched, setFetched] = useState(true);
     const navigate = useNavigate();
+    const { user } = useSelector((store) => store.user);
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, []);
     const signupHandler = async (e) => {
         e.preventDefault();
         setFetched(false);

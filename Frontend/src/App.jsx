@@ -12,17 +12,57 @@ import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chatAction } from "./store/chatSlice";
 import { useSocket } from "./store/SocketContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Sidebar />,
+        element: (
+            <ProtectedRoute>
+                <Sidebar />
+            </ProtectedRoute>
+        ),
         children: [
-            { path: "/", element: <Home /> },
-            { path: "/profile/:id", element: <Profile /> },
-            { path: "/posts", element: <Posts /> },
-            { path: "/profile/:id/edit", element: <EditProfile /> },
-            { path: "/chat", element: <ChatPage /> },
+            {
+                path: "/",
+                element: (
+                    <ProtectedRoute>
+                        <Home />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/profile/:id",
+                element: (
+                    <ProtectedRoute>
+                        <Profile />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/posts",
+                element: (
+                    <ProtectedRoute>
+                        <Posts />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/profile/:id/edit",
+                element: (
+                    <ProtectedRoute>
+                        <EditProfile />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/chat",
+                element: (
+                    <ProtectedRoute>
+                        <ChatPage />
+                    </ProtectedRoute>
+                ),
+            },
         ],
     },
     { path: "/login", element: <Login /> },
