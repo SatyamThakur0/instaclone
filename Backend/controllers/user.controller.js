@@ -86,9 +86,10 @@ export const loginUser = async (req, res) => {
             return res
                 .status(200)
                 .cookie("token", token, {
-                    // httpOnly: true, // Prevent access from JavaScript
-                    secure: true, // Set to true if using HTTPS
-                    sameSite: "None", // For cross-site cookies
+                    httpOnly: true, // Prevent access from JavaScript
+                    secure, // Set to true if using HTTPS
+                    sameSite: "None", // For cross-site cookies,
+                    domain: "https://instaclone-omega-two.vercel.app/",
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
