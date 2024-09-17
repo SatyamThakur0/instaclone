@@ -70,6 +70,7 @@ const EditProfile = () => {
                 dispatch(userActions.setUser(payload));
                 dispatch(userActions.setProfile(payload));
                 localStorage.setItem("user", JSON.stringify(payload));
+                localStorage.setItem("profile", JSON.stringify(payload));
                 setUpdated(true);
             }
         } catch (error) {
