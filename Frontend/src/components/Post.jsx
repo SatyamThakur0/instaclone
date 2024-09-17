@@ -24,8 +24,8 @@ const Post = ({ post }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [postLike, setPostLike] = useState({
-        liked: post.likes.includes(user?._id) || false,
-        likeCount: post.likes.length,
+        liked: post?.likes.includes(user?._id) || false,
+        likeCount: post?.likes.length,
     });
 
     const inputHandler = (e) => {
