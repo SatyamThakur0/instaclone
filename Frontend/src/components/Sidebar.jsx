@@ -40,7 +40,7 @@ const Sidebar = () => {
             const res = await fetch(
                 "https://instaclone-backend-nu.vercel.app/api/user/logout",
                 {
-                    method: "POSt",
+                    method: "POST",
                     headers: { "content-type": "application/json" },
                     credentials: "include",
                 }
@@ -52,6 +52,7 @@ const Sidebar = () => {
                 toast.success(data.message);
                 navigate("/login");
                 localStorage.removeItem("user");
+                localStorage.removeItem("profile");
             }
         } catch (error) {
             console.log(error);
