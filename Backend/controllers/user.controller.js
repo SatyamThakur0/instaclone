@@ -83,7 +83,7 @@ export const loginUser = async (req, res) => {
                 saved: User.saved,
                 posts: User.posts,
             };
-            document.cookie = `token = ${token}`;
+            // document.cookie = `token = ${token}`;
             return res
                 .status(200)
                 .cookie("token", token, {
@@ -96,6 +96,7 @@ export const loginUser = async (req, res) => {
                     message: `Welcome, ${User.name}`,
                     success: true,
                     payload,
+                    token,
                 });
         } else {
             return res.status(404).json({

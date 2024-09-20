@@ -46,6 +46,7 @@ const Login = () => {
             }
             const data = await response.json();
             console.log(data);
+            document.cookie = `token = ${data.token}`;
 
             if (data.success) {
                 localStorage.setItem("user", JSON.stringify(data.payload));
