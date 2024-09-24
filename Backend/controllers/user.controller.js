@@ -90,7 +90,7 @@ export const loginUser = async (req, res) => {
                 .cookie("token", token, {
                     httpOnly: true, // Prevent access from JavaScript
                     secure: true, // Set to true if using HTTPS
-                    sameSite: "None", // For cross-site cookies,
+                    sameSite: "Lax", // For cross-site cookies,
                     domain: ".vercel.app",
                 })
                 .json({
