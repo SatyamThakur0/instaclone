@@ -26,7 +26,7 @@ const CommentDialog = ({
 
     useEffect(() => {
         fetch(
-            `https://instaclonetanx.vercel.app/api/post/comments/${post._id}`,
+            `https://instaclonetanxapi.vercel.app/api/post/comments/${post._id}`,
             {
                 credentials: "include",
             }

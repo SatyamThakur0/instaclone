@@ -48,7 +48,7 @@ const EditProfile = () => {
             formData.append("bio", input.bio);
             formData.append("gender", input.gender);
             let res = await fetch(
-                "https://instaclonetanx.vercel.app/api/user/profile/edit",
+                "https://instaclonetanxapi.vercel.app/api/user/profile/edit",
                 {
                     method: "POST",
                     credentials: "include",

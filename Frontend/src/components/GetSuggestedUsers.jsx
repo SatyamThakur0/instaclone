@@ -6,7 +6,7 @@ const GetSuggestedUsers = () => {
     const dispatch = useDispatch();
     try {
         useEffect(() => {
-            fetch("https://instaclonetanx.vercel.app/api/user/suggested", {
+            fetch("https://instaclonetanxapi.vercel.app/api/user/suggested", {
                 credentials: "include",
             })
                 .then((res) => res.json())

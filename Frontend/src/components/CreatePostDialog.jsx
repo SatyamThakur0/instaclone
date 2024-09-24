@@ -43,7 +43,7 @@ const CreatePostDialog = ({ open, setOpen }) => {
             if (imagePreview)
                 formData.append("image", inputRef.current.files[0]);
             const res = await fetch(
-                "https://instaclonetanx.vercel.app/api/post/postimage",
+                "https://instaclonetanxapi.vercel.app/api/post/postimage",
                 {
                     method: "POST",
                     credentials: "include",

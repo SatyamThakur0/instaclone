@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 export const GetProfileData = ({ userId }) => {
     const dispatch = useDispatch();
     useEffect(() => {
-        fetch(`https://instaclonetanx.vercel.app/api/post/posts/${userId}`, {
+        fetch(`https://instaclonetanxapi.vercel.app/api/post/posts/${userId}`, {
             credentials: "include",
         })
             .then((res) => res.json())

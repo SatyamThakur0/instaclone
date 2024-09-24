@@ -6,7 +6,7 @@ const GetSavedPosts = ({ userId }) => {
     const dispatch = useDispatch();
     useEffect(() => {
         fetch(
-            `https://instaclonetanx.vercel.app/api/user/profile/saved/${userId}`,
+            `https://instaclonetanxapi.vercel.app/api/user/profile/saved/${userId}`,
             {
                 credentials: "include",
             }
