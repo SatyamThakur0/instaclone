@@ -90,8 +90,8 @@ export const loginUser = async (req, res) => {
                 .cookie("token", token, {
                     httpOnly: true, // Prevent access from JavaScript
                     secure: true, // Set to true if using HTTPS
-                    sameSite: "Lax", // For cross-site cookies,
-                    domain: ".vercel.app/",
+                    sameSite: "none", // For cross-site cookies,
+                    // domain: ".vercel.app/",
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
