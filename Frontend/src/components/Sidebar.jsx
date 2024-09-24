@@ -38,7 +38,7 @@ const Sidebar = () => {
         e.preventDefault();
         try {
             const res = await fetch(
-                "https://instaclone-backend-nu.vercel.app/api/user/logout",
+                "https://instaclonetanx.vercel.app/api/user/logout",
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },
@@ -63,7 +63,7 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "https://instaclone-backend-nu.vercel.app/api/notification/allnotificactions",
+            "https://instaclonetanx.vercel.app/api/notification/allnotificactions",
             {
                 method: "GET",
                 credentials: "include",

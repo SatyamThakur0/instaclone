@@ -33,7 +33,7 @@ const Login = () => {
                 password: passwordRef.current.value,
             };
             const response = await fetch(
-                "https://instaclone-backend-nu.vercel.app/api/user/login",
+                "https://instaclonetanx.vercel.app/api/user/login",
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },

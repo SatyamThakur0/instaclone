@@ -14,13 +14,9 @@ const Posts = () => {
 
     useEffect(() => {
         try {
-            fetch(
-                "https://instaclone-backend-nu.vercel.app/api/post/allposts",
-                {
-                    credentials: "include",
-                    
-                }
-            )
+            fetch("https://instaclonetanx.vercel.app/api/post/allposts", {
+                credentials: "include",
+            })
                 .then((res) => res.json())
                 .then((res) => {
                     if (res.success)
