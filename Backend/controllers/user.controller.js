@@ -84,13 +84,13 @@ export const loginUser = async (req, res) => {
                 posts: User.posts,
             };
             // document.cookie = `token = ${token}`;
-            
+
             return res
                 .status(200)
                 .cookie("token", token, {
                     httpOnly: true, // Prevent access from JavaScript
                     secure: true, // Set to true if using HTTPS
-                    sameSite: "Lax", // For cross-site cookies,
+                    sameSite: "None", // For cross-site cookies,
                     domain: ".vercel.app/",
                 })
                 .json({
