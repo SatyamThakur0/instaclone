@@ -91,7 +91,7 @@ export const loginUser = async (req, res) => {
                     httpOnly: true, // Prevent access from JavaScript
                     secure: true, // Set to true if using HTTPS
                     sameSite: "Lax", // For cross-site cookies,
-                    domain: ".vercel.app",
+                    domain: ".vercel.app/",
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
