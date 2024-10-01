@@ -91,7 +91,8 @@ export const loginUser = async (req, res) => {
                     httpOnly: true,
                     sameSite: "none",
                     secure: true,
-                    domain: "instaclonetanx.vercel.app",
+                    domain: ".vercel.app",
+                    path: "/",
                 })
                 .json({
                     message: `Welcome, ${User.name}`,
