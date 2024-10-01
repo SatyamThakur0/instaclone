@@ -22,10 +22,7 @@ mongoose
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-const corsOption = {
-    origin: "https://instaclonetanx.vercel.app",
-    credentials: true,
-};
+
 app.use(cors(corsOption));
 app.use((req, res, next) => {
     res.header(
@@ -39,6 +36,10 @@ app.use((req, res, next) => {
     );
     next();
 });
+const corsOption = {
+    origin: "https://instaclonetanx.vercel.app",
+    credentials: true,
+};
 
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
