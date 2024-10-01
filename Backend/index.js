@@ -27,6 +27,18 @@ const corsOption = {
     credentials: true,
 };
 app.use(cors(corsOption));
+app.use((req, res, next) => {
+    res.header(
+        "Access-Control-Allow-Origin",
+        "https://instaclonetanx.vercel.app"
+    );
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+});
 
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
