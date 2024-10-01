@@ -36,9 +36,9 @@ const Login = () => {
                 "https://instaclonetanxapi.vercel.app/api/user/login",
                 {
                     method: "POST",
+                    credentials: "include",
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify(payload),
-                    credentials: "include",
                 }
             );
             if (response) {
