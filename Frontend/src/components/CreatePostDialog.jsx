@@ -12,6 +12,7 @@ import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { postsActions } from "@/store/postsSlice";
+import { useNavigate } from "react-router";
 
 const CreatePostDialog = ({ open, setOpen }) => {
     const [imagePreview, setImagePreview] = useState(null);
