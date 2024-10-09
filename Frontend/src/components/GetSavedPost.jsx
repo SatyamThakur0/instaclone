@@ -11,7 +11,7 @@ const GetSavedPosts = ({ userId }) => {
         const payload = { token };
         if (!token) navigate("/login");
         fetch(
-            `https://instaclonetanx.vercel.app/api/user/profile/saved/${userId}`,
+            `https://instaclonetanxapi.vercel.app/api/user/profile/saved/${userId}`,
             {
                 method: "POST",
                 credentials: "include",

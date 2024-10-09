@@ -41,7 +41,7 @@ const Sidebar = () => {
         e.preventDefault();
         try {
             const res = await fetch(
-                "https://instaclonetanx.vercel.app/api/user/logout",
+                "https://instaclonetanxapi.vercel.app/api/user/logout",
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },
@@ -67,7 +67,7 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "https://instaclonetanx.vercel.app/api/notification/allnotificactions",
+            "https://instaclonetanxapi.vercel.app/api/notification/allnotificactions",
             {
                 method: "POST",
                 credentials: "include",

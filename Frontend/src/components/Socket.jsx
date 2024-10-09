@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 const Socket = () => {
     const { user } = useSelector((store) => store.user);
     const [socket, setSocket] = useState();
-    const Socket = io("https://instaclonetanx.vercel.app", {
+    const Socket = io("https://instaclonetanxapi.vercel.app", {
         transports: ["websocket"],
         query: {
             userId: user?._id,

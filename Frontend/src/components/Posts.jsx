@@ -17,7 +17,7 @@ const Posts = () => {
     if (!token) navigate("/login");
     useEffect(() => {
         try {
-            fetch("https://instaclonetanx.vercel.app/api/post/allposts", {
+            fetch("https://instaclonetanxapi.vercel.app/api/post/allposts", {
                 method: "POST",
                 credentials: "include",
                 headers: { "content-type": "application/json" },

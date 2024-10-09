@@ -31,7 +31,7 @@ const CommentDialog = ({
     if (!token) navigate("/login");
     useEffect(() => {
         fetch(
-            `https://instaclonetanx.vercel.app/api/post/comments/${post._id}`,
+            `https://instaclonetanxapi.vercel.app/api/post/comments/${post._id}`,
             {
                 method: "POST",
                 credentials: "include",

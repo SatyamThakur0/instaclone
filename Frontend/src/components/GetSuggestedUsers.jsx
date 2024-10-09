@@ -11,7 +11,7 @@ const GetSuggestedUsers = () => {
             // const token = localStorage.getItem("token");
             // const payload = { token };
             // if (!token) navigate("/login");
-            // fetch("https://instaclonetanx.vercel.app/api/user/suggested", {
+            // fetch("https://instaclonetanxapi.vercel.app/api/user/suggested", {
             //     method: "POST",
             //     credentials: "include",
             //     headers: { "content-type": "application/json" },
@@ -31,7 +31,7 @@ const GetSuggestedUsers = () => {
                 const payload = { token };
                 if (!token) navigate("/login");
                 let res = await fetch(
-                    "https://instaclonetanx.vercel.app/api/user/suggested",
+                    "https://instaclonetanxapi.vercel.app/api/user/suggested",
                     {
                         method: "POST",
                         credentials: "include",
