@@ -12,10 +12,10 @@ const Posts = () => {
     const { user } = useSelector((store) => store.user);
     const navigate = useNavigate();
 
-    const token = localStorage.getItem("token");
-    const payload = { token };
-    if (!token) navigate("/login");
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        const payload = { token };
+        if (!token) navigate("/login");
         try {
             fetch("https://instaclonetanxapi.vercel.app/api/post/allposts", {
                 method: "POST",

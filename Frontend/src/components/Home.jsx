@@ -7,7 +7,7 @@ const Home = () => {
         <div className={`flex ${styles.home}  w-[70%]`}>
             
             <Feed className={`border-2 `} />
-            <RightSidebar />
+            {/* <RightSidebar /> */}
         </div>
     );
 };
