@@ -8,7 +8,7 @@ export const GetProfileData = ({ userId }) => {
         const token = localStorage.getItem("token");
         const payload = { token };
         if (!token) navigate("/login");
-        fetch(`http://localhost:8000/api/post/posts/${userId}`, {
+        fetch(`https://instaclonetanx.vercel.app/api/post/posts/${userId}`, {
             method: "POST",
             credentials: "include",
             headers: { "content-type": "application/json" },

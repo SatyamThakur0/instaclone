@@ -9,7 +9,7 @@ const GetSuggestedUsers = () => {
             // const token = localStorage.getItem("token");
             // const payload = { token };
             // if (!token) navigate("/login");
-            // fetch("http://localhost:8000/api/user/suggested", {
+            // fetch("https://instaclonetanx.vercel.app/api/user/suggested", {
             //     method: "POST",
             //     credentials: "include",
             //     headers: { "content-type": "application/json" },
@@ -29,7 +29,7 @@ const GetSuggestedUsers = () => {
                 const payload = { token };
                 if (!token) navigate("/login");
                 let res = await fetch(
-                    "http://localhost:8000/api/user/suggested",
+                    "https://instaclonetanx.vercel.app/api/user/suggested",
                     {
                         method: "POST",
                         credentials: "include",

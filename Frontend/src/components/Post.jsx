@@ -41,7 +41,7 @@ const Post = ({ post }) => {
     const deletePost = async (postId) => {
         try {
             let res = await fetch(
-                `http://localhost:8000/api/post/delete/${postId}`,
+                `https://instaclonetanx.vercel.app/api/post/delete/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -66,7 +66,7 @@ const Post = ({ post }) => {
     const savePost = async (postId) => {
         try {
             let res = await fetch(
-                `http://localhost:8000/api/post/saveorunsave/${postId}`,
+                `https://instaclonetanx.vercel.app/api/post/saveorunsave/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -91,7 +91,7 @@ const Post = ({ post }) => {
     const postComment = async (text) => {
         try {
             let res = await fetch(
-                `http://localhost:8000/api/post/comment/${post._id}`,
+                `https://instaclonetanx.vercel.app/api/post/comment/${post._id}`,
                 {
                     credentials: "include",
                     method: "POST",
@@ -114,7 +114,7 @@ const Post = ({ post }) => {
     const likeDislikeHandler = async (postId) => {
         try {
             let res = await fetch(
-                `http://localhost:8000/api/post/like/${postId}`,
+                `https://instaclonetanx.vercel.app/api/post/like/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",

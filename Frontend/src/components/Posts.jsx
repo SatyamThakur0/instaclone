@@ -14,10 +14,10 @@ const Posts = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        const payload = { token, };
+        const payload = { token };
         if (!token) navigate("/login");
         try {
-            fetch("http://localhost:8000/api/post/allposts", {
+            fetch("https://instaclonetanx.vercel.app/api/post/allposts", {
                 method: "POST",
                 credentials: "include",
                 headers: { "content-type": "application/json" },

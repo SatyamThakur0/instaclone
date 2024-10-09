@@ -8,7 +8,7 @@ const GetAllMessages = () => {
     useEffect(() => {
         const getMessages = async () => {
             let res = await fetch(
-                `http://localhost:8000/api/message/get/${selectedChat._id}`,
+                `https://instaclonetanx.vercel.app/api/message/get/${selectedChat._id}`,
                 { credentials: "include" }
             );
             res = await res.json();
