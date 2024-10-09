@@ -220,16 +220,16 @@ const Sidebar = () => {
             </Dialog>
 
             <div
-                className={`borde r-2 border-cyan-700 flex w-screen h-screen ${styles.outer} scroll-smooth overflow-scroll overscroll-none`}
+                className={` flex w-screen h-screen ${styles.outer} scroll-smooth overflow-scroll overscroll-none`}
             >
                 <div
-                    className={`bord er-2 border-cyan-700 overscroll-none fixed ${styles.sidebar} h-screen`}
+                    className={` overscroll-none fixed ${styles.sidebar} h-screen`}
                 >
                     <div className={`mt-4 px-4 font-bold mb-8`}>LOGO</div>
                     <div
                         className={`${
                             window.width > 820 && 'px-2'
-                        } bmorder-2 border-cyan-700 flex w-full items-center justify-center `}
+                        }  flex w-full items-center justify-center `}
                     >
                         <div
                             className={`flex flex-col justify-center gap-2 items-start `}

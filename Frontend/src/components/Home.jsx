@@ -11,7 +11,7 @@ const Home = () => {
                 window.width > 1140 || (window.width < 1040 && window.width > 820)? "left-[28%]" : "left-[22%]"
             } ${
                 window.width < 820 && 'left-[16%]'
-            }  relative w-[461px] border-2 border-red-700`}
+            }  relative w-[461px]`}
         >
             <Feed className={`border-2 `} />
             {window.width > 1040 && <RightSidebar />}
