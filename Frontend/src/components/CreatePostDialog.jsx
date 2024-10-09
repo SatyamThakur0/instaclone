@@ -19,6 +19,7 @@ const CreatePostDialog = ({ open, setOpen }) => {
     const inputRef = useRef();
     const captionRef = useRef();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     // HANDLE IMAGE PREVIEW
     const handleImagePreview = (event) => {

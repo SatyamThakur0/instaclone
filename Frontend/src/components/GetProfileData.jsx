@@ -1,9 +1,11 @@
 import { userActions } from "@/store/userSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 export const GetProfileData = ({ userId }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     useEffect(() => {
         const token = localStorage.getItem("token");
         const payload = { token };

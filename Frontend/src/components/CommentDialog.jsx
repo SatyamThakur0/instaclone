@@ -8,6 +8,7 @@ import { MoreHorizontal } from "lucide-react";
 import { useSelector } from "react-redux";
 import { FaRegBookmark, FaRegComment, FaRegHeart } from "react-icons/fa";
 import { PiPaperPlaneTiltBold } from "react-icons/pi";
+import { useNavigate } from "react-router";
 
 const CommentDialog = ({
     open,
@@ -23,6 +24,7 @@ const CommentDialog = ({
     const inpRef = useRef();
     const { user } = useSelector((store) => store.user);
     const [inptext, setInptext] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem("token");

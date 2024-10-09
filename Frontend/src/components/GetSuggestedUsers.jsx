@@ -1,9 +1,11 @@
 import { userActions } from "@/store/userSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 const GetSuggestedUsers = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     try {
         useEffect(() => {
             // const token = localStorage.getItem("token");
