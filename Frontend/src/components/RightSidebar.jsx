@@ -42,7 +42,7 @@ const RightSidebar = () => {
     };
 
     return (
-        <div className={`ml-2/3 ${styles.rightsidebar}`}>
+        <div className={`ml-[15%] w-[300px] h-screen borader-2 border-red-700`}>
             <span className={`flex w-full items-center gap-3 mt-5 px-4`}>
                 <Avatar
                     onClick={() => navigate(`/profile/${user?._id}`)}
@@ -62,11 +62,11 @@ const RightSidebar = () => {
                 </div>
             </span>
 
-            <div className="flex px-3 mt-5">
+            <div className="flex px-3 justify-between mt-5 w-[300px]">
                 <p className="font-semibold ml-2 text-sm text-gray-600">
                     Suggested for you
                 </p>
-                <Link className="absolute right-0 font-semibold text-sm mx-20">
+                <Link className="font-semibold text-sm mr-[10px]">
                     See all
                 </Link>
             </div>
@@ -100,7 +100,7 @@ const RightSidebar = () => {
                         return (
                             <span
                                 key={suggestedUser._id}
-                                className={`flex w-full items-center mt-2 px-4`}
+                                className={`flex w-full items-center mt-2 justify-between px-4`}
                             >
                                 <div className="flex items-center gap-3">
                                     <Avatar
@@ -146,7 +146,7 @@ const RightSidebar = () => {
                                     onClick={() =>
                                         handleFollow(suggestedUser._id)
                                     }
-                                    className="text-sm font-semibold   text-blue-500 cursor-pointer absolute right-20"
+                                    className="text-sm font-semibold text-blue-500 cursor-pointer mr-[6px]"
                                 >
                                     {user?.following.includes(suggestedUser._id)
                                         ? "Following"
