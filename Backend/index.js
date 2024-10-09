@@ -32,6 +32,5 @@ app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
 app.use("/api/message", messageRouter);
 app.use("/api/notification", notificationRouter);
-// app.get("/api", isAuthenticated, () => {});
 
 server.listen(PORT, () => console.log(`Server is live...`));

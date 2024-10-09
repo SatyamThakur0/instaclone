@@ -36,7 +36,7 @@ const Sidebar = () => {
     const payload = { token };
     if (!token) navigate("/login");
 
-    // GetSuggestedUsers();
+    GetSuggestedUsers();
     const handleLogout = async (e) => {
         e.preventDefault();
         try {
