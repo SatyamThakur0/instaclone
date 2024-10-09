@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 const corsOption = {
-    origin: "https://instaclonetanx.vercel.app",
+    origin: "https://instaclonetanx.vercel.app/",
     credentials: true,
 };
 app.use(cors(corsOption));
