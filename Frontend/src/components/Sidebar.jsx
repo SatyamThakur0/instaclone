@@ -32,19 +32,19 @@ const Sidebar = () => {
         (store) => store.notification
     );
     const socket = useSocket();
+    const token = localStorage.getItem("token");
+    const payload = { token };
+    if (!token) navigate("/login");
 
     GetSuggestedUsers();
     const handleLogout = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(
-                "https://instaclonetanxapi.vercel.app/api/user/logout",
-                {
-                    method: "POST",
-                    headers: { "content-type": "application/json" },
-                    credentials: "include",
-                }
-            );
+            const res = await fetch("http://localhost:8000/api/user/logout", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                credentials: "include",
+            });
             const data = await res.json();
             if (data.success) {
                 dispatch(userActions.setNull());
@@ -53,6 +53,7 @@ const Sidebar = () => {
                 navigate("/login");
                 localStorage.removeItem("user");
                 localStorage.removeItem("profile");
+                localStorage.removeItem("token");
             }
         } catch (error) {
             console.log(error);
@@ -63,10 +64,12 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "https://instaclonetanxapi.vercel.app/api/notification/allnotificactions",
+            "http://localhost:8000/api/notification/allnotificactions",
             {
-                method: "GET",
+                method: "POST",
                 credentials: "include",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(payload),
             }
         );
         res = await res.json();

@@ -36,14 +36,17 @@ const CreatePostDialog = ({ open, setOpen }) => {
     };
     // POST IMAGE
     const postImage = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) navigate("/login");
         setImgPosted(false);
         try {
             const formData = new FormData();
             formData.append("caption", captionRef.current.value);
+            formData.append("token", token);
             if (imagePreview)
                 formData.append("image", inputRef.current.files[0]);
             const res = await fetch(
-                "https://instaclonetanxapi.vercel.app/api/post/postimage",
+                "http://localhost:8000/api/post/postimage",
                 {
                     method: "POST",
                     credentials: "include",

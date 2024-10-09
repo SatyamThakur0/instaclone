@@ -11,14 +11,6 @@ const Socket = () => {
             userId: user?._id,
         },
     });
-    // const Socket = useMemo(() =>
-    //     io("http://localhost:8000", {
-    //         transports: ["websocket"],
-    //         query: {
-    //             userId: user?._id,
-    //         },
-    //     })
-    // );
     setSocket(Socket);
     return socket;
 };
