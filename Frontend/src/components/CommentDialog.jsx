@@ -26,10 +26,10 @@ const CommentDialog = ({
     const [inptext, setInptext] = useState("");
     const navigate = useNavigate();
 
+    const token = localStorage.getItem("token");
+    const payload = { token };
+    if (!token) navigate("/login");
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        const payload = { token };
-        if (!token) navigate("/login");
         fetch(
             `https://instaclonetanx.vercel.app/api/post/comments/${post._id}`,
             {
