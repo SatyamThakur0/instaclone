@@ -28,6 +28,10 @@ const Post = ({ post }) => {
         likeCount: post?.likes.length,
     });
 
+    const token = localStorage.getItem("token");
+    const payload = { token };
+    if (!token) navigate("/login");
+
     const inputHandler = (e) => {
         if (!e.target.value.trim()) {
             setText("");
@@ -37,11 +41,12 @@ const Post = ({ post }) => {
     const deletePost = async (postId) => {
         try {
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/post/delete/${postId}`,
+                `http://localhost:8000/api/post/delete/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",
                     headers: { "content-type": "application/json" },
+                    body: JSON.stringify(payload),
                 }
             );
             res = await res.json();
@@ -61,11 +66,12 @@ const Post = ({ post }) => {
     const savePost = async (postId) => {
         try {
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/post/saveorunsave/${postId}`,
+                `http://localhost:8000/api/post/saveorunsave/${postId}`,
                 {
-                    credentials: "include",
-                    headers: { "content-type": "applicationn/json" },
                     method: "POST",
+                    credentials: "include",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify(payload),
                 }
             );
             res = await res.json();
@@ -85,12 +91,12 @@ const Post = ({ post }) => {
     const postComment = async (text) => {
         try {
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/post/comment/${post._id}`,
+                `http://localhost:8000/api/post/comment/${post._id}`,
                 {
                     credentials: "include",
                     method: "POST",
                     headers: { "content-type": "application/json" },
-                    body: JSON.stringify({ text }),
+                    body: JSON.stringify({ text, token }),
                 }
             );
             comInp.current.value = "";
@@ -108,11 +114,12 @@ const Post = ({ post }) => {
     const likeDislikeHandler = async (postId) => {
         try {
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/post/like/${postId}`,
+                `http://localhost:8000/api/post/like/${postId}`,
                 {
                     method: "POST",
-                    headers: { "content-type": "application/json" },
                     credentials: "include",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify(payload),
                 }
             );
             res = await res.json();

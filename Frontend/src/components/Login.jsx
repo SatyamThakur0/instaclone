@@ -33,7 +33,7 @@ const Login = () => {
                 password: passwordRef.current.value,
             };
             const response = await fetch(
-                "https://instaclonetanxapi.vercel.app/api/user/login",
+                "http://localhost:8000/api/user/login",
                 {
                     method: "POST",
                     credentials: "include",
@@ -49,6 +49,7 @@ const Login = () => {
 
             if (data.success) {
                 localStorage.setItem("user", JSON.stringify(data.payload));
+                localStorage.setItem("token", data.token);
                 dispatch(
                     userActions.setUser(
                         JSON.parse(localStorage.getItem("user"))

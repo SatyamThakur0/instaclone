@@ -40,6 +40,8 @@ const EditProfile = () => {
     };
 
     const editProfile = async (e) => {
+        const token = localStorage.getItem("token");
+        if (!token) navigate("/login");
         e.preventDefault();
         try {
             setUpdated(false);
@@ -47,8 +49,9 @@ const EditProfile = () => {
             formData.append("profilePicture", input.profilePicture);
             formData.append("bio", input.bio);
             formData.append("gender", input.gender);
+            formData.append("token", token);
             let res = await fetch(
-                "https://instaclonetanxapi.vercel.app/api/user/profile/edit",
+                "http://localhost:8000/api/user/profile/edit",
                 {
                     method: "POST",
                     credentials: "include",

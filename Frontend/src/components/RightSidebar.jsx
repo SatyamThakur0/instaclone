@@ -12,20 +12,19 @@ const RightSidebar = () => {
     const { user, suggestedUsers } = useSelector((store) => store.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [suggestedFetched, setSuggestedFetched] = useState(
-        suggestedUsers == [] ? false : true
-    );
 
-    // if (suggestedUsers != []) setSuggestedFetched(true);
-
+    const token = localStorage.getItem("token");
+    const payload = { token };
+    if (!token) navigate("/login");
     const handleFollow = async (userId) => {
         try {
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/user/followorunfollow/${userId}`,
+                `http://localhost:8000/api/user/followorunfollow/${userId}`,
                 {
                     credentials: "include",
                     method: "POST",
                     headers: { "content-type": "application/json" },
+                    body: JSON.stringify(payload),
                 }
             );
             res = await res.json();

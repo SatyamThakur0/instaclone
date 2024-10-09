@@ -13,15 +13,21 @@ const Posts = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        const payload = { token, };
+        if (!token) navigate("/login");
         try {
-            fetch("https://instaclonetanxapi.vercel.app/api/post/allposts", {
+            fetch("http://localhost:8000/api/post/allposts", {
+                method: "POST",
                 credentials: "include",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(payload),
             })
                 .then((res) => res.json())
                 .then((res) => {
-                    if (res.success)
+                    if (res.success) {
                         dispatch(postsActions.getAllPost(res.allPosts));
-                    // else navigate("/login");
+                    } else navigate("/login");
                 });
         } catch (error) {
             console.log(error);
