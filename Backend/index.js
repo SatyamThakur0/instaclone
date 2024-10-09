@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 const corsOption = {
-    origin: "https://instaclonetanx.vercel.app/",
+    origin: "https://instaclonetanx.vercel.app",
     credentials: true,
 };
 app.use(cors(corsOption));
@@ -32,6 +32,6 @@ app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
 app.use("/api/message", messageRouter);
 app.use("/api/notification", notificationRouter);
-app.get("/api", isAuthenticated, () => {});
+// app.get("/api", isAuthenticated, () => {});
 
 server.listen(PORT, () => console.log(`Server is live...`));
