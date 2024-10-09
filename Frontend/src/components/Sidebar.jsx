@@ -21,6 +21,7 @@ import { notificationAction } from "@/store/notificationSlice";
 import { useSocket } from "@/store/SocketContext";
 import GetRTN from "./custom/GetRTN";
 import { Button } from "./ui/button";
+import useWindowSize from "./UseWindowSize";
 
 const Sidebar = () => {
     const { user } = useSelector((store) => store.user);
@@ -151,6 +152,14 @@ const Sidebar = () => {
             itemName: "Profile",
         },
     ];
+    // useEffect(() => {
+    //     console.log(window.innerHeight);
+    //     console.log(window.innerWidth);
+    // }, []);
+    const window = useWindowSize();
+    console.log(window.width);
+    console.log(window.height);
+
     return (
         <>
             <Dialog open={openNotiPanel}>
@@ -211,15 +220,19 @@ const Sidebar = () => {
             </Dialog>
 
             <div
-                className={`flex w-screen h-screen ${styles.outer} scroll-smooth overflow-scroll overscroll-none`}
+                className={`borde r-2 border-cyan-700 flex w-screen h-screen ${styles.outer} scroll-smooth overflow-scroll overscroll-none`}
             >
                 <div
-                    className={`overscroll-none p-8 fixed ${styles.sidebar} gap-8 h-screen`}
+                    className={`bord er-2 border-cyan-700 overscroll-none fixed ${styles.sidebar} h-screen`}
                 >
                     <div className={`mt-4 px-4 font-bold mb-8`}>LOGO</div>
-                    <div className={`flex w-full items-center justify-start `}>
+                    <div
+                        className={`${
+                            window.width > 820 && 'px-2'
+                        } bmorder-2 border-cyan-700 flex w-full items-center justify-center `}
+                    >
                         <div
-                            className={`flex flex-col justify-center gap-3 items-start `}
+                            className={`flex flex-col justify-center gap-2 items-start `}
                         >
                             {SidebarItems.map((item) => (
                                 <SidebarItem
@@ -236,7 +249,7 @@ const Sidebar = () => {
                         className={`${styles.floatbottom} flex gap-2 items-center rounded-md cursor-pointer hover:bg-slate-100 px-6 py-3`}
                     >
                         <BiLogOut className="scale-150" />
-                        <Link>Logout</Link>
+                        {window.width > 820 && <Link>Logout</Link>}
                     </div>
                 </div>
                 <Outlet />
