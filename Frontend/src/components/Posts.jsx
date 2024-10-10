@@ -17,7 +17,7 @@ const Posts = () => {
         const payload = { token };
         if (!token) navigate("/login");
         try {
-            fetch("https://instaclonetanxapi.vercel.app/api/post/allposts", {
+            fetch("https://instaclone-pe0r.onrender.com/api/post/allposts", {
                 method: "POST",
                 credentials: "include",
                 headers: { "content-type": "application/json" },
