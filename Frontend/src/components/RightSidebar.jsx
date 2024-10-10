@@ -16,6 +16,7 @@ const RightSidebar = () => {
     const token = localStorage.getItem("token");
     const payload = { token };
     if (!token) navigate("/login");
+
     const handleFollow = async (userId) => {
         try {
             let res = await fetch(
@@ -28,6 +29,8 @@ const RightSidebar = () => {
                 }
             );
             res = await res.json();
+            console.log(res);
+            
             if (res.success) {
                 toast.success(res.message);
                 dispatch(

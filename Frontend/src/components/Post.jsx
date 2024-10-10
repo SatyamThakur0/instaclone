@@ -152,14 +152,14 @@ const Post = ({ post }) => {
                         className="cursor-pointer"
                         onClick={() => navigate(`/profile/${post.author._id}`)}
                     >
-                        <AvatarImage src={post.author.profilePicture} />
+                        <AvatarImage src={post?.author?.profilePicture} />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     <Link
-                        to={`/profile/${post.author._id}`}
+                        to={`/profile/${post?.author?._id}`}
                         className={`font-semibold`}
                     >
-                        {post.author.username}
+                        {post?.author?.username}
                     </Link>
                     {/* <div className={`text-gray-700`}>2d</div> */}
                 </span>
@@ -173,7 +173,7 @@ const Post = ({ post }) => {
                             <MoreHorizontal />
                         </DialogTrigger>
                         <DialogContent className="flex flex-col outline-none items-center w-1/5">
-                            {user?._id !== post.author._id && (
+                            {user?._id !== post?.author?._id && (
                                 <div
                                     variant="ghost"
                                     className={`w-fit font-semibold rounded-lg cursor-pointer hover:bg-slate-100 p-2 text-red-700`}
@@ -188,7 +188,7 @@ const Post = ({ post }) => {
                             >
                                 Add to favorates
                             </div>
-                            {user?._id === post.author._id && (
+                            {user?._id === post?.author?._id && (
                                 <div
                                     variant="ghost"
                                     className={`text-red-700 w-fit cursor-pointer p-2 font-semibold hover:bg-slate-100 rounded-lg`}
@@ -212,7 +212,7 @@ const Post = ({ post }) => {
                 <img
                     onDoubleClick={() => likeDislikeHandler(post._id)}
                     className={`rounded-md`}
-                    src={post.image}
+                    src={post?.image}
                     alt=""
                 />
             </div>
@@ -272,17 +272,17 @@ const Post = ({ post }) => {
                 </div>
                 {post.caption && (
                     <div className={`text-sm`}>
-                        <b>{post.author.username}</b> {post.caption}
+                        <b>{post?.author?.username}</b> {post?.caption}
                     </div>
                 )}
             </div>
             <div className={`w-full text-sm px-1`}>
-                {post.comments.length > 0 && (
+                {post?.comments.length > 0 && (
                     <p
                         className="cursor-pointer  text-gray-500"
                         onClick={() => setOpen(true)}
                     >
-                        View all {post.comments.length} comments
+                        View all {post?.comments.length} comments
                     </p>
                 )}
                 {open && (

@@ -80,7 +80,7 @@ const Posts = () => {
     else
         return (
             <div className={`relative w-1/4 flex flex-col`}>
-                {posts.map((post) => (
+                {posts?.map((post) => (
                     <Post key={post?._id} post={post} />
                 ))}
             </div>
