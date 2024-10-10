@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app",
-    "build": "npm run build"
+    "start": "node index.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
