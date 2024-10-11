@@ -18,7 +18,6 @@ const Posts = () => {
         if (!token) navigate("/login");
         try {
             fetch("https://instaclone-pe0r.onrender.com/api/post/allposts", {
-                
                 method: "POST",
                 credentials: "include",
                 headers: { "content-type": "application/json" },
