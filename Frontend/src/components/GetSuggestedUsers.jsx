@@ -31,7 +31,7 @@ const GetSuggestedUsers = () => {
                 const payload = { token };
                 if (!token) navigate("/login");
                 let res = await fetch(
-                    "https://instaclonetanxapi.vercel.app/api/user/suggested",
+                    "https://instaclone-pe0r.onrender.com/api/user/suggested",
                     {
                         method: "POST",
                         credentials: "include",
