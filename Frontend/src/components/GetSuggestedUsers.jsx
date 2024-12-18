@@ -11,7 +11,7 @@ const GetSuggestedUsers = () => {
             // const token = localStorage.getItem("token");
             // const payload = { token };
             // if (!token) navigate("/login");
-            // fetch("https://instaclonetanxapi.vercel.app/api/user/suggested", {
+            // fetch("https://instaclone-pe0r.onrender.com/api/user/suggested", {
             //     method: "POST",
             //     credentials: "include",
             //     headers: { "content-type": "application/json" },

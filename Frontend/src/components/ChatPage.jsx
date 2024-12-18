@@ -39,7 +39,7 @@ const ChatPage = () => {
             const msg = inpMessage.current.value;
             inpMessage.current.value = "";
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/message/send/${selectedChat._id}`,
+                `https://instaclone-pe0r.onrender.com/api/message/send/${selectedChat._id}`,
                 {
                     credentials: "include",
                     method: "POST",

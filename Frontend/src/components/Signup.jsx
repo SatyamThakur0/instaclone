@@ -32,7 +32,7 @@ const Signup = () => {
                 password: passwordRef.current.value,
             };
             const response = await fetch(
-                "https://instaclonetanxapi.vercel.app/api/user/signup",
+                "https://instaclone-pe0r.onrender.com/api/user/signup",
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },

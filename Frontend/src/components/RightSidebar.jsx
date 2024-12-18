@@ -20,7 +20,7 @@ const RightSidebar = () => {
     const handleFollow = async (userId) => {
         try {
             let res = await fetch(
-                `https://instaclonetanxapi.vercel.app/api/user/followorunfollow/${userId}`,
+                `https://instaclone-pe0r.onrender.com/api/user/followorunfollow/${userId}`,
                 {
                     credentials: "include",
                     method: "POST",
@@ -30,7 +30,7 @@ const RightSidebar = () => {
             );
             res = await res.json();
             console.log(res);
-            
+
             if (res.success) {
                 toast.success(res.message);
                 dispatch(
@@ -69,9 +69,7 @@ const RightSidebar = () => {
                 <p className="font-semibold ml-2 text-sm text-gray-600">
                     Suggested for you
                 </p>
-                <Link className="font-semibold text-sm mr-[10px]">
-                    See all
-                </Link>
+                <Link className="font-semibold text-sm mr-[10px]">See all</Link>
             </div>
             <div className="mt-1 w-[300px]">
                 {suggestedUsers?.length == 0 ? (

@@ -42,7 +42,7 @@ const Sidebar = () => {
         e.preventDefault();
         try {
             const res = await fetch(
-                "https://instaclonetanxapi.vercel.app/api/user/logout",
+                "https://instaclone-pe0r.onrender.com/api/user/logout",
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },
@@ -68,7 +68,7 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "https://instaclonetanxapi.vercel.app/api/notification/allnotificactions",
+            "https://instaclone-pe0r.onrender.com/api/notification/allnotificactions",
             {
                 method: "POST",
                 credentials: "include",
@@ -228,7 +228,7 @@ const Sidebar = () => {
                     <div className={`mt-4 px-4 font-bold mb-8`}>LOGO</div>
                     <div
                         className={`${
-                            window.width > 820 && 'px-2'
+                            window.width > 820 && "px-2"
                         }  flex w-full items-center justify-center `}
                     >
                         <div
