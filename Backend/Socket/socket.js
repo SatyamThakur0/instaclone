@@ -6,7 +6,7 @@ export const app = express();
 export const server = http.createServer(app);
 export const io = new Server(server, {
     cors: {
-        origin: "https://instaclonetanxapi.vercel.app",
+        origin: "https://instaclonetanx.vercel.app",
         methods: ["GET", "POST"],
     },
 });
