@@ -39,7 +39,7 @@ export const sendMessage = async (req, res) => {
 };
 
 export const getMessage = async (req, res) => {
-    console.log("req rec");
+    // console.log("req rec");
     
     try {
         const senderId = req.payload._id;
@@ -52,7 +52,7 @@ export const getMessage = async (req, res) => {
             return res.status(200).json({ success: true, messages: [] });
         }
         await Conversation.populate("messages");
-        console.log(Conversation);
+        // console.log(Conversation);
         
         return res.status(200).json({
             success: true,
