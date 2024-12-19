@@ -12,6 +12,8 @@ const GetAllMessages = () => {
     if (!token) navigate("/login");
 
     useEffect(() => { 
+        console.log("req.send");
+        
             let res = fetch(`${import.meta.env.VITE_BACKEND_URL}/api/message/get/${selectedChat._id}`,
                 {
                     method: "POST",
@@ -24,7 +26,6 @@ const GetAllMessages = () => {
                 .then((res) => {
                     if (res.success) {
                         console.log(res.messages);
-                        
                         dispatch(chatAction.setMessages(res.messages));
                     } else navigate("/login");
                 });
