@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import styles from "./Post.module.css";
 import { chatAction } from "@/store/chatSlice";
 import Messages from "./Messages";
+import { useNavigate } from "react-router";
 
 const ChatPage = () => {
     const { selectedChat, messages, onlineUsers } = useSelector(
@@ -13,6 +14,7 @@ const ChatPage = () => {
     const { user, suggestedUsers } = useSelector((store) => store.user);
     const inpMessage = useRef();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [text, setText] = useState("");
 
     const inputHandler = (e) => {
@@ -35,8 +37,12 @@ const ChatPage = () => {
     const sendMessageHandler = async (e) => {
         e.preventDefault();
         try {
-            setText("");
             const msg = inpMessage.current.value;
+            const token = localStorage.getItem("token");
+            const payload = { token, message: msg };
+            
+            if (!token) navigate("/login");
+            setText("");
             inpMessage.current.value = "";
             let res = await fetch(
                 `${import.meta.env.VITE_BACKEND_URL}/api/message/send/${
@@ -46,9 +52,7 @@ const ChatPage = () => {
                     credentials: "include",
                     method: "POST",
                     headers: { "content-type": "application/json" },
-                    body: JSON.stringify({
-                        message: msg,
-                    }),
+                    body: JSON.stringify(payload),
                 }
             );
             res = await res.json();

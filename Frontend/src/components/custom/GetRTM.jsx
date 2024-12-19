@@ -6,16 +6,15 @@ import { useSocket } from "@/store/SocketContext";
 const GetRTM = () => {
     const dispatch = useDispatch();
     const socket = useSocket();
-    // console.log(socket);
     
     useEffect(() => {
+        // if (!socket) return;
         socket.on("newMessage", (newMessage) => {
             dispatch(chatAction.updateMessages(newMessage));
         });
-
-        // return () => {
-        //     socket.off("newMessage");
-        // };
+        return () => {
+            socket.off("newMessage");
+        };
     }, [socket]);
 };
 export default GetRTM;
