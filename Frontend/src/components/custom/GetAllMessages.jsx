@@ -23,6 +23,8 @@ const GetAllMessages = () => {
                 .then((res) => res.json())
                 .then((res) => {
                     if (res.success) {
+                        console.log(res.messages);
+                        
                         dispatch(chatAction.setMessages(res.messages));
                     } else navigate("/login");
                 });
