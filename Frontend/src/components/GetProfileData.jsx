@@ -10,7 +10,7 @@ export const GetProfileData = ({ userId }) => {
         const token = localStorage.getItem("token");
         const payload = { token };
         if (!token) navigate("/login");
-        fetch(`https://instaclone-pe0r.onrender.com/api/post/posts/${userId}`, {
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/api/post/posts/${userId}`, {
             method: "POST",
             credentials: "include",
             headers: { "content-type": "application/json" },

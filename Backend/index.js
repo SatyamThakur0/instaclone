@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors( {
-    origin: 'https://instaclonetanx.vercel.app',
+    origin: process.env.FRONTEND_URL,
     credentials: true,
 }));
 

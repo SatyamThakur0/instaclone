@@ -11,7 +11,7 @@ const GetSuggestedUsers = () => {
             // const token = localStorage.getItem("token");
             // const payload = { token };
             // if (!token) navigate("/login");
-            // fetch("https://instaclone-pe0r.onrender.com/api/user/suggested", {
+            // fetch("${import.meta.env.VITE_BACKEND_URL}/api/user/suggested", {
             //     method: "POST",
             //     credentials: "include",
             //     headers: { "content-type": "application/json" },
@@ -31,7 +31,7 @@ const GetSuggestedUsers = () => {
                 const payload = { token };
                 if (!token) navigate("/login");
                 let res = await fetch(
-                    "https://instaclone-pe0r.onrender.com/api/user/suggested",
+                    `${import.meta.env.VITE_BACKEND_URL}/api/user/suggested`,
                     {
                         method: "POST",
                         credentials: "include",

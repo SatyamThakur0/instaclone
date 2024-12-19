@@ -6,7 +6,7 @@ export const createToken = (user) => {
         name: user.name,
         email: user.email,
     };
-    const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "1d" });
+    const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '60s' });
     return token;
 };
 

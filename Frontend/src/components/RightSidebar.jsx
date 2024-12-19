@@ -20,7 +20,9 @@ const RightSidebar = () => {
     const handleFollow = async (userId) => {
         try {
             let res = await fetch(
-                `https://instaclone-pe0r.onrender.com/api/user/followorunfollow/${userId}`,
+                `${
+                    import.meta.env.VITE_BACKEND_URL
+                }/api/user/followorunfollow/${userId}`,
                 {
                     credentials: "include",
                     method: "POST",

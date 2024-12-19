@@ -1,7 +1,7 @@
 import conversation from "../models/conversation.model.js";
 import message from "../models/message.model.js";
 import { getSocketId, io } from "../Socket/socket.js";
-
+ 
 export const sendMessage = async (req, res) => {
     try {
         const senderId = req.payload._id;
@@ -39,6 +39,8 @@ export const sendMessage = async (req, res) => {
 };
 
 export const getMessage = async (req, res) => {
+    console.log("req rec");
+    
     try {
         const senderId = req.payload._id;
         const receiverId = req.params.id;
@@ -50,6 +52,8 @@ export const getMessage = async (req, res) => {
             return res.status(200).json({ success: true, messages: [] });
         }
         await Conversation.populate("messages");
+        console.log(Conversation);
+        
         return res.status(200).json({
             success: true,
             messages: Conversation.messages,

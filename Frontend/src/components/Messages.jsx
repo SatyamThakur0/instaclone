@@ -25,7 +25,7 @@ const Messages = ({ chatSelected }) => {
                 ref={scroll}
                 className={`bocrder ${styles.noScrollbar} h-[83vh] w-full overflow-scroll flex flex-col border-red-600`}
             >
-                {messages.length === 0 ? (
+                {messages?.length === 0 ? (
                     <p className="ml-[50%] mt-[30vh]">
                         <Loader2 className="animate-spin" />
                     </p>

@@ -2,7 +2,7 @@ import user from "../models/user.model.js";
 import post from "../models/post.model.js";
 import comment from "../models/comment.model.js";
 import cloudinary from "../utils/cloudinary.js";
-import getDataUri from "../utils/dataUri.js";
+import getDataUri from "../utils/dataUri.js"; 
 import { getSocketId, io } from "../Socket/socket.js";
 import notification from "../models/notification.model.js";
 

@@ -41,7 +41,7 @@ const Post = ({ post }) => {
     const deletePost = async (postId) => {
         try {
             let res = await fetch(
-                `https://instaclone-pe0r.onrender.com/api/post/delete/${postId}`,
+                `${import.meta.env.VITE_BACKEND_URL}/api/post/delete/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -66,7 +66,9 @@ const Post = ({ post }) => {
     const savePost = async (postId) => {
         try {
             let res = await fetch(
-                `https://instaclone-pe0r.onrender.com/api/post/saveorunsave/${postId}`,
+                `${
+                    import.meta.env.VITE_BACKEND_URL
+                }/api/post/saveorunsave/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -91,7 +93,9 @@ const Post = ({ post }) => {
     const postComment = async (text) => {
         try {
             let res = await fetch(
-                `https://instaclone-pe0r.onrender.com/api/post/comment/${post._id}`,
+                `${import.meta.env.VITE_BACKEND_URL}/api/post/comment/${
+                    post._id
+                }`,
                 {
                     credentials: "include",
                     method: "POST",
@@ -114,7 +118,7 @@ const Post = ({ post }) => {
     const likeDislikeHandler = async (postId) => {
         try {
             let res = await fetch(
-                `https://instaclone-pe0r.onrender.com/api/post/like/${postId}`,
+                `${import.meta.env.VITE_BACKEND_URL}/api/post/like/${postId}`,
                 {
                     method: "POST",
                     credentials: "include",

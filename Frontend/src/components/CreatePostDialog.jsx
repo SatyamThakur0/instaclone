@@ -48,7 +48,7 @@ const CreatePostDialog = ({ open, setOpen }) => {
             if (imagePreview)
                 formData.append("image", inputRef.current.files[0]);
             const res = await fetch(
-                "https://instaclone-pe0r.onrender.com/api/post/postimage",
+                `${import.meta.env.VITE_BACKEND_URL}/api/post/postimage`,
                 {
                     method: "POST",
                     credentials: "include",

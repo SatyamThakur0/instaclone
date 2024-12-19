@@ -11,7 +11,9 @@ const GetSavedPosts = ({ userId }) => {
         const payload = { token };
         if (!token) navigate("/login");
         fetch(
-            `https://instaclone-pe0r.onrender.com/api/user/profile/saved/${userId}`,
+            `${
+                import.meta.env.VITE_BACKEND_URL
+            }/api/user/profile/saved/${userId}`,
             {
                 method: "POST",
                 credentials: "include",

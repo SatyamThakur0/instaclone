@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 const Socket = () => {
     const { user } = useSelector((store) => store.user);
     const [socket, setSocket] = useState();
-    const Socket = io("https://instaclone-pe0r.onrender.com", {
+    const Socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
         transports: ["websocket"],
         query: {
             userId: user?._id,

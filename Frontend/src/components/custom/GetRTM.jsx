@@ -6,7 +6,7 @@ import { useSocket } from "@/store/SocketContext";
 const GetRTM = () => {
     const dispatch = useDispatch();
     const socket = useSocket();
-    console.log(socket);
+    // console.log(socket);
     
     useEffect(() => {
         socket.on("newMessage", (newMessage) => {

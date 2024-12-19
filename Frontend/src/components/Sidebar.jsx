@@ -42,7 +42,7 @@ const Sidebar = () => {
         e.preventDefault();
         try {
             const res = await fetch(
-                "https://instaclone-pe0r.onrender.com/api/user/logout",
+                `${import.meta.env.VITE_BACKEND_URL}/api/user/logout`,
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },
@@ -68,7 +68,7 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "https://instaclone-pe0r.onrender.com/api/notification/allnotificactions",
+            "${import.meta.env.VITE_BACKEND_URL}/api/notification/allnotificactions",
             {
                 method: "POST",
                 credentials: "include",
@@ -157,8 +157,8 @@ const Sidebar = () => {
     //     console.log(window.innerWidth);
     // }, []);
     const window = useWindowSize();
-    console.log(window.width);
-    console.log(window.height);
+    // console.log(window.width);
+    // console.log(window.height);
 
     return (
         <>

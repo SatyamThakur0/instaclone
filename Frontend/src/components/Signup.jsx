@@ -32,7 +32,7 @@ const Signup = () => {
                 password: passwordRef.current.value,
             };
             const response = await fetch(
-                "https://instaclone-pe0r.onrender.com/api/user/signup",
+                `${import.meta.env.VITE_BACKEND_URL}/api/user/signup`,
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },

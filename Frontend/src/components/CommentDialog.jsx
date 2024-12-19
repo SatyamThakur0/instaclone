@@ -31,7 +31,7 @@ const CommentDialog = ({
     if (!token) navigate("/login");
     useEffect(() => {
         fetch(
-            `https://instaclone-pe0r.onrender.com/api/post/comments/${post._id}`,
+            `${import.meta.env.VITE_BACKEND_URL}/api/post/comments/${post._id}`,
             {
                 method: "POST",
                 credentials: "include",

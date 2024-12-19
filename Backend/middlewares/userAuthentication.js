@@ -21,6 +21,8 @@ const isAuthenticated = async (req, res, next) => {
             });
         }
         req.payload = payload;
+        console.log("auth checked");
+        
         next();
     } catch (error) {
         console.log(error);

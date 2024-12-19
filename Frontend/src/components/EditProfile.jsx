@@ -51,7 +51,7 @@ const EditProfile = () => {
             formData.append("gender", input.gender);
             formData.append("token", token);
             let res = await fetch(
-                "https://instaclone-pe0r.onrender.com/api/user/profile/edit",
+                `${import.meta.env.VITE_BACKEND_URL}/api/user/profile/edit`,
                 {
                     method: "POST",
                     credentials: "include",
