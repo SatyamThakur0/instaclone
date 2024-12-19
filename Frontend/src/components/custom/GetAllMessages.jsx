@@ -11,7 +11,7 @@ const GetAllMessages = () => {
     const navigate = useNavigate();
     if (!token) navigate("/login");
 
-    useEffect(() => {
+    useEffect(() => { 
             let res = fetch(`${import.meta.env.VITE_BACKEND_URL}/api/message/get/${selectedChat._id}`,
                 {
                     method: "POST",
