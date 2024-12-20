@@ -40,7 +40,7 @@ const ChatPage = () => {
             const msg = inpMessage.current.value;
             const token = localStorage.getItem("token");
             const payload = { token, message: msg };
-            
+
             if (!token) navigate("/login");
             setText("");
             inpMessage.current.value = "";

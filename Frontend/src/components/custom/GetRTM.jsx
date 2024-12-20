@@ -12,9 +12,9 @@ const GetRTM = () => {
         socket.on("newMessage", (newMessage) => {
             dispatch(chatAction.updateMessages(newMessage));
         });
-        return () => {
-            socket.off("newMessage");
-        };
+        // return () => {
+        //     socket.off("newMessage");
+        // };
     }, [socket]);
 };
 export default GetRTM;
