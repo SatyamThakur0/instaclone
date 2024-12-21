@@ -207,7 +207,6 @@ const Sidebar = () => {
                 </DialogContent>
             </Dialog>
 
-            {/* {window.width >= 500 && ( */}
             <div
                 className={` flex w-screen h-screen ${styles.outer} scroll-smooth overflow-scroll overscroll-none`}
             >
@@ -240,11 +239,16 @@ const Sidebar = () => {
                         <BiLogOut className="scale-150" />
                         {window.width > 820 && <Link>Logout</Link>}
                     </div>
+                    <div className="bg-gray-300 p-2 rounded-md font-semibold text-center"
+                        onClick={() => {
+                            navigate("/home");
+                        }}
+                    >
+                        home2
+                    </div>
                 </div>
                 <Outlet />
             </div>
-            {/* )} */}
-            <div className={`hidden xl:block`}>awzexrdctfvgbhnjmkl</div>
         </>
     );
 };
