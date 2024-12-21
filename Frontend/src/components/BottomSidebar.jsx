@@ -34,7 +34,7 @@ const BottomSidebar = () => {
         },
     ];
     return (
-        <div className={`z-50 bg-white sm:hidden flex w-screen h-16 fixed bottom-0 justify-around items-center border-t border-gray-600`}>
+        <div className={`z-50 bg-white sm:hidden flex w-[100%] h-16 fixed bottom-0 justify-around items-center border-t border-gray-600`}>
             {SidebarItems.map((item) => (
                 <div className={`p-4 rounded-md hover:bg-gray-300 cursor-pointer`}>{item.icon}</div>
             ))}
