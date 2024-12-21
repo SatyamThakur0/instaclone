@@ -13,6 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { chatAction } from "./store/chatSlice";
 import { useSocket } from "./store/SocketContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import LeftSidebar from "./components/LeftSidebar";
+import BottomSidebar from "./components/BottomSidebar";
+import Home2 from "./components/Home2";
 
 const router = createBrowserRouter([
     {
@@ -67,6 +70,9 @@ const router = createBrowserRouter([
     },
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup /> },
+    { path: "/leftsidebar", element: <LeftSidebar /> },
+    { path: "/bottomsidebar", element: <BottomSidebar /> },
+    { path: "/home", element: <Home2 /> },
 ]);
 
 function App() {

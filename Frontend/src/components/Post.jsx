@@ -148,7 +148,7 @@ const Post = ({ post }) => {
 
     return (
         <div
-            className={`${styles.post} m-1 flex flex-col justify-center items-center w-1/4 h-fit`}
+            className={`min-w-[470px] my-1 px-2 flex flex-col justify-center items-center w-14 h-fit border border-green-600`}
         >
             <div className={`w-full py-4 px-1 h-15 flex items-center`}>
                 <span className={`flex w-full items-center gap-2 `}>

@@ -11,10 +11,14 @@ const GetAllMessages = () => {
     const navigate = useNavigate();
     if (!token) navigate("/login");
 
-    useEffect(() => { 
-        console.log("req.send");
-        
-            let res = fetch(`${import.meta.env.VITE_BACKEND_URL}/api/message/get/${selectedChat._id}`,
+    useEffect(() => {
+        // console.log("req.send");
+        try {
+            dispatch(chatAction.setLoading(true));
+            let res = fetch(
+                `${import.meta.env.VITE_BACKEND_URL}/api/message/get/${
+                    selectedChat._id
+                }`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -27,8 +31,14 @@ const GetAllMessages = () => {
                     if (res.success) {
                         console.log(res.messages);
                         dispatch(chatAction.setMessages(res.messages));
+                        dispatch(chatAction.setLoading(false));
                     } else navigate("/login");
                 });
+        } catch (error) {
+            console.log(error);
+        } finally {
+            dispatch(chatAction.setLoading(false));
+        }
     }, [selectedChat]);
 };
 

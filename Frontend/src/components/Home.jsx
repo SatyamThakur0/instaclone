@@ -6,7 +6,7 @@ import useWindowSize from "./UseWindowSize";
 const Home = () => {
     const window = useWindowSize();
     return (
-        <div
+        <div 
             className={`flex ${
                 window.width > 1140 || (window.width < 1040 && window.width > 820)? "left-[28%]" : "left-[22%]"
             } ${

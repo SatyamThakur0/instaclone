@@ -68,7 +68,9 @@ const Sidebar = () => {
 
     const getNotifications = async () => {
         let res = await fetch(
-            "${import.meta.env.VITE_BACKEND_URL}/api/notification/allnotificactions",
+            `${
+                import.meta.env.VITE_BACKEND_URL
+            }/api/notification/allnotificactions`,
             {
                 method: "POST",
                 credentials: "include",
@@ -152,16 +154,10 @@ const Sidebar = () => {
             itemName: "Profile",
         },
     ];
-    // useEffect(() => {
-    //     console.log(window.innerHeight);
-    //     console.log(window.innerWidth);
-    // }, []);
     const window = useWindowSize();
-    // console.log(window.width);
-    // console.log(window.height);
-
     return (
         <>
+            {/* {window.width >= 500 && <></>} */}
             <Dialog open={openNotiPanel}>
                 <DialogTrigger asChild></DialogTrigger>
                 <DialogTitle />
@@ -179,12 +175,7 @@ const Sidebar = () => {
                         >
                             <div className="flex items-center gap-2">
                                 <span className={`flex items-center gap-2 `}>
-                                    <Avatar
-                                        className="cursor-pointer"
-                                        // onClick={() =>
-                                        //     navigate(`/profile/${post.author._id}`)
-                                        // }
-                                    >
+                                    <Avatar className="cursor-pointer">
                                         <AvatarImage
                                             src={
                                                 notification.reactedBy
@@ -193,10 +184,7 @@ const Sidebar = () => {
                                         />
                                         <AvatarFallback>CN</AvatarFallback>
                                     </Avatar>
-                                    <Link
-                                        // to={`/profile/${post.author._id}`}
-                                        className={`font-semibold`}
-                                    >
+                                    <Link className={`font-semibold`}>
                                         {notification.reactedBy.username}
                                     </Link>
                                 </span>
@@ -219,6 +207,7 @@ const Sidebar = () => {
                 </DialogContent>
             </Dialog>
 
+            {/* {window.width >= 500 && ( */}
             <div
                 className={` flex w-screen h-screen ${styles.outer} scroll-smooth overflow-scroll overscroll-none`}
             >
@@ -254,6 +243,8 @@ const Sidebar = () => {
                 </div>
                 <Outlet />
             </div>
+            {/* )} */}
+            <div className={`hidden xl:block`}>awzexrdctfvgbhnjmkl</div>
         </>
     );
 };

@@ -101,7 +101,6 @@ const ChatPage = () => {
                     ))}
                 </div>
             </section>
-            {/* <div className="bordegr flex w-[70vw] h-screen border-blue-700"> */}
             {chatSelected ? (
                 <div className="flex-1">
                     <div className="flex border-b border-gray-400 p-4">
@@ -146,7 +145,6 @@ const ChatPage = () => {
                 </h1>
             )}
         </div>
-        // </div>
     );
 };
 export default ChatPage;

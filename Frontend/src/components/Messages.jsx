@@ -15,6 +15,7 @@ const Messages = ({ chatSelected }) => {
     const navigate = useNavigate();
 
     const { messages } = useSelector((store) => store.chat);
+    const { loadingMessages } = useSelector((store) => store.chat);
     const { user } = useSelector((store) => store.user);
     useEffect(() => {
         scroll.current.scrollTop = scroll.current.scrollHeight;
@@ -25,31 +26,34 @@ const Messages = ({ chatSelected }) => {
                 ref={scroll}
                 className={`bocrder ${styles.noScrollbar} h-[83vh] w-full overflow-scroll flex flex-col border-red-600`}
             >
-                {messages?.length === 0 ? (
+                <div className="bordzer border-red-600 my-20 w-full flex flex-col items-center">
+                    <Avatar className="w-[100px] h-[100px]">
+                        <AvatarImage src={chatSelected?.profilePicture} />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <h1 className="font-semibold text-xl">
+                        {chatSelected.name}
+                    </h1>
+                    <Button
+                        onClick={() => {
+                            navigate(`/profile/${chatSelected._id}`);
+                        }}
+                        className="bg-gray-300 text-black hover:bg-gray-400 h-8 mt-2"
+                    >
+                        View profile
+                    </Button>
+                </div>
+                {loadingMessages && (
                     <p className="ml-[50%] mt-[30vh]">
                         <Loader2 className="animate-spin" />
                     </p>
+                )}
+                {messages?.length === 0 ? (
+                    <p className="ml-[43%]  font-bold text-xl">
+                        No Messages...
+                    </p>
                 ) : (
                     <>
-                        <div className="bordzer border-red-600 my-20 w-full flex flex-col items-center">
-                            <Avatar className="w-[100px] h-[100px]">
-                                <AvatarImage
-                                    src={chatSelected?.profilePicture}
-                                />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <h1 className="font-semibold text-xl">
-                                {chatSelected.name}
-                            </h1>
-                            <Button
-                                onClick={() => {
-                                    navigate(`/profile/${chatSelected._id}`);
-                                }}
-                                className="bg-gray-300 text-black hover:bg-gray-400 h-8 mt-2"
-                            >
-                                View profile
-                            </Button>
-                        </div>
                         {messages?.map((msg) => (
                             <div
                                 key={msg._id}

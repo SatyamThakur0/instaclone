@@ -6,6 +6,7 @@ const chatSlice = createSlice({
         selectedChat: [],
         onlineUsers: [],
         messages: [],
+        loadingMessages: false,
     },
     reducers: {
         setSelectedChat: (state, action) => {
@@ -16,10 +17,12 @@ const chatSlice = createSlice({
         },
         setMessages: (state, action) => {
             state.messages = action.payload;
-            
         },
         updateMessages: (state, action) => {
             state.messages.push(action.payload);
+        },
+        setLoading: (state, action) => {
+            state.loadingMessages = action.payload;
         },
     },
 });

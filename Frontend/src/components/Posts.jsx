@@ -79,7 +79,7 @@ const Posts = () => {
         );
     else
         return (
-            <div className={`relative w-1/4 flex flex-col`}>
+            <div className={`relative left-[5%] sm:left-[10%] md:left-[10%] lg:left-[3%] flex flex-col border border-red-600`}>
                 {posts?.map((post) => (
                     <Post key={post?._id} post={post} />
                 ))}
