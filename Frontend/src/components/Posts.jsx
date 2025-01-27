@@ -79,7 +79,7 @@ const Posts = () => {
         );
     else
         return (
-            <div className={`relative left-[5%] sm:left-[10%] md:left-[10%] lg:left-[3%] flex flex-col border border-red-600`}>
+            <div className={`relative left-[5%] sm:left-[10%] md:left-[10%] lg:left-[3%] flex flex-col bord er-2 border-red-600 hide-scrollbar`}>
                 {posts?.map((post) => (
                     <Post key={post?._id} post={post} />
                 ))}

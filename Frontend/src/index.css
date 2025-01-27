@@ -6,11 +6,25 @@ body{
     background-color: #eeeeee;
     box-sizing: border-box;
     overscroll-behavior-y: none;
-    /* overflow: visible; */
+    /* width: 100vw; */
 }
 input{
     background-color: #eeeeee;
 }
 textarea{
     background-color: #eeeeee;
+}
+.hide-scrollbar::-webkit-scrollbar-thumb {
+    /* display: none; */
+    color: red;
+    width: 30px;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    /* display: none; */
+    color: red;
+    width: 30px;
+}
+.hide-scrollbar {
+    /* display: none; */
+    /* color: red; */
 }

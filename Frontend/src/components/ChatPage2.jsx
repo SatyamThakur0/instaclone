@@ -5,8 +5,10 @@ import styles from "./Post.module.css";
 import { chatAction } from "@/store/chatSlice";
 import Messages from "./Messages";
 import { useNavigate } from "react-router";
+import GetSuggestedUsers from "./GetSuggestedUsers";
 
-const ChatPage = () => {
+const ChatPage2 = () => {
+    GetSuggestedUsers();
     const { selectedChat, messages, onlineUsers } = useSelector(
         (state) => state.chat
     );
@@ -147,4 +149,4 @@ const ChatPage = () => {
         </div>
     );
 };
-export default ChatPage;
+export default ChatPage2;

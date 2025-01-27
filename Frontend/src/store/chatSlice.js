@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const chatSlice = createSlice({
     name: "chat",
     initialState: {
-        selectedChat: [],
+        selectedChat: null,
         onlineUsers: [],
         messages: [],
         loadingMessages: false,

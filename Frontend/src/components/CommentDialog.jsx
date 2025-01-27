@@ -67,7 +67,7 @@ const CommentDialog = ({
     else {
         return (
             <Dialog open={open}>
-                <DialogTitle />
+                <DialogTitle /> 
 
                 <DialogContent
                     className={`outline-none flex flex-col gap-0 bg-[#eeeeee] p-0 h-[85vh] w-[450px]`}

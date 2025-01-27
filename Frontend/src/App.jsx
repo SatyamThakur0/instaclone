@@ -16,6 +16,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LeftSidebar from "./components/LeftSidebar";
 import BottomSidebar from "./components/BottomSidebar";
 import Home2 from "./components/Home2";
+import ChatPage2 from "./components/ChatPage2";
+import Chat from "./components/ChatComponents/Chat";
 
 const router = createBrowserRouter([
     {
@@ -73,6 +75,8 @@ const router = createBrowserRouter([
     { path: "/leftsidebar", element: <LeftSidebar /> },
     { path: "/bottomsidebar", element: <BottomSidebar /> },
     { path: "/home", element: <Home2 /> },
+    { path: "/chat2", element: <Chat /> },
+    { path: "/chat3", element: <Chat /> },
 ]);
 
 function App() {
