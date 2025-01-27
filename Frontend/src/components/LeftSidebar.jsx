@@ -17,11 +17,11 @@ import { postsActions } from "@/store/postsSlice";
 
 const LeftSidebar = () => {
     const [openNotiPanel, setOpenNotiPanel] = useState(false);
-    const navigate = useNavigate();
+    const { user } = useSelector((store) => store.user);
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [tab, setTab] = useState("home");
-    const { user } = useSelector((store) => store.user);
     GetSuggestedUsers();
 
     const SidebarItems = [
@@ -100,9 +100,9 @@ const LeftSidebar = () => {
             localStorage.setItem("profile", JSON.stringify(user));
             navigate(`/profile/${user?._id}`);
         } else if (name === "home") {
-            navigate("/home");
+            navigate("/");
         } else if (name === "chat") {
-            navigate("/chat2");
+            navigate("/chat");
         } else if (name === "notifications") {
             getNotifications();
             setOpenNotiPanel(true);

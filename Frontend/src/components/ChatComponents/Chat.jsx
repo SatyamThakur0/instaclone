@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { chatAction } from "@/store/chatSlice";
 
 function Chat() {
-    // const [selectedChat, setSelectedChat] = useState(null);
     const {selectedChat} = useSelector((store) => store.chat);
     const dispatch = useDispatch();
 
@@ -28,10 +27,6 @@ function Chat() {
 
                     {/* Main content area */}
                     <main className="flex-1 flex flex-col">
-                        {/* Mobile header */}
-                        
-
-                        {/* Chat window or list */}
                         {selectedChat ? (
                             <ChatWindow
                                 chat={selectedChat}

@@ -10,12 +10,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "@/store/userSlice";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { notificationAction } from "@/store/notificationSlice";
+import NotificationDialog from "./NotificationDialog";
 
 const BottomSidebar = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
     const [tab, setTab] = useState("home");
+    const [openNotiPanel, setOpenNotiPanel] = useState(false);
     const { user } = useSelector((store) => store.user);
 
     const SidebarItems = [
@@ -41,32 +43,50 @@ const BottomSidebar = () => {
         },
         {
             icon: <IoChatbubbleEllipsesOutline className="scale-150" />,
-            name: "chat2",
+            name: "chat",
         },
         {
             icon: (
                 <Avatar className="w-7 h-7">
-                    <AvatarImage />
+                    <AvatarImage className="w-7 h-7 rounded-full" src={user.profilePicture} />
                     <AvatarFallback>ST</AvatarFallback>
                 </Avatar>
             ),
             name: "profile",
         },
     ];
+    const getNotifications = async () => {
+        const token = localStorage.getItem("token");
+        const payload = { token };
+        let res = await fetch(
+            `${
+                import.meta.env.VITE_BACKEND_URL
+            }/api/notification/allnotificactions`,
+            {
+                method: "POST",
+                credentials: "include",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(payload),
+            }
+        );
+        res = await res.json();
+        console.log(res);
+        dispatch(notificationAction.setNotifications(res.Notifications));
+    };
     function handleTabChange(name) {
         setTab(name);
         if (name === "create") {
             setOpen(true);
         } else if (name === "profile") {
-            dispatch(userActions.setProfile(null));
+            // dispatch(userActions.setProfile(null));
             dispatch(userActions.setProfilePost([]));
             dispatch(userActions.setProfile(user));
             localStorage.setItem("profile", JSON.stringify(user));
             navigate(`/profile/${user?._id}`);
         } else if (name === "home") {
-            navigate("/home");
-        } else if (name === "chat2") {
-            navigate("/chat2");
+            navigate("/");
+        } else if (name === "chat") {
+            navigate("/chat");
         } else if (name === "notifications") {
             getNotifications();
             setOpenNotiPanel(true);
@@ -75,6 +95,10 @@ const BottomSidebar = () => {
     }
     return (
         <>
+            <NotificationDialog
+                openNotiPanel={openNotiPanel}
+                setOpenNotiPanel={setOpenNotiPanel}
+            />
             <div
                 className={`z-50 bg-white sm:hidden flex w-[100%] h-16 fixed bottom-0 justify-around items-center border-t border-gray-600`}
             >

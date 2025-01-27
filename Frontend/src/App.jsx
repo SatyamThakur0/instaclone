@@ -3,7 +3,7 @@ import "./App.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
+import Profile2 from "./components/Profile2";
 import Sidebar from "./components/Sidebar";
 import Posts from "./components/Posts";
 import EditProfile from "./components/EditProfile";
@@ -18,65 +18,64 @@ import BottomSidebar from "./components/BottomSidebar";
 import Home2 from "./components/Home2";
 import ChatPage2 from "./components/ChatPage2";
 import Chat from "./components/ChatComponents/Chat";
+import ProfilePage from "./components/profile/ProfilePage";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: (
-            <ProtectedRoute>
-                <Sidebar />
-            </ProtectedRoute>
-        ),
-        children: [
-            {
-                path: "/",
-                element: (
-                    <ProtectedRoute>
-                        <Home />
-                    </ProtectedRoute>
-                ),
-            },
-            {
-                path: "/profile/:id",
-                element: (
-                    <ProtectedRoute>
-                        <Profile />
-                    </ProtectedRoute>
-                ),
-            },
-            {
-                path: "/posts",
-                element: (
-                    <ProtectedRoute>
-                        <Posts />
-                    </ProtectedRoute>
-                ),
-            },
-            {
-                path: "/profile/:id/edit",
-                element: (
-                    <ProtectedRoute>
-                        <EditProfile />
-                    </ProtectedRoute>
-                ),
-            },
-            {
-                path: "/chat",
-                element: (
-                    <ProtectedRoute>
-                        <ChatPage />
-                    </ProtectedRoute>
-                ),
-            },
-        ],
-    },
+    // {
+    //     path: "/",
+    //     element: (
+    //         <ProtectedRoute>
+    //             <Sidebar />
+    //         </ProtectedRoute>
+    //     ),
+    //     children: [
+    //         {
+    //             path: "/",
+    //             element: (
+    //                 <ProtectedRoute>
+    //                     <Home />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //         // {
+    //         //     path: "/profile/:id",
+    //         //     element: (
+    //         //         <ProtectedRoute>
+    //         //             <Profile2 />
+    //         //         </ProtectedRoute>
+    //         //     ),
+    //         // },
+    //         {
+    //             path: "/posts",
+    //             element: (
+    //                 <ProtectedRoute>
+    //                     <Posts />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //         {
+    //             path: "/profile/:id/edit",
+    //             element: (
+    //                 <ProtectedRoute>
+    //                     <EditProfile />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //         {
+    //             path: "/chat",
+    //             element: (
+    //                 <ProtectedRoute>
+    //                     <ChatPage />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //     ],
+    // },
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup /> },
-    { path: "/leftsidebar", element: <LeftSidebar /> },
-    { path: "/bottomsidebar", element: <BottomSidebar /> },
-    { path: "/home", element: <Home2 /> },
-    { path: "/chat2", element: <Chat /> },
-    { path: "/chat3", element: <Chat /> },
+    { path: "/", element: <Home2 /> },
+    { path: "/chat", element: <Chat /> },
+    { path: "/profile/:id", element: <ProfilePage /> },
 ]);
 
 function App() {
