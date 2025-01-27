@@ -16,9 +16,9 @@ function Chat() {
 
     return (
         <>
-            <div className="flex h-screen bg-gray-100 ">
+            <div className="flex h-screen bg-gray-100">
                 <LeftSidebar />
-                <BottomSidebar />
+                {!selectedChat && <BottomSidebar />}
                 {/* Sidebar for larger screens */}
                 <div className="flex-1 flex sm:ml-[75px] lg:ml-[160px]">
                     <aside className="hidden md:flex md:flex-col lg:w-80 md:w-72 bg-white border-r">
