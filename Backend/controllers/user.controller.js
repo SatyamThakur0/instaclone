@@ -123,7 +123,7 @@ export const logout = (req, res) => {
 export const getProfile = async (req, res) => {
     try {
         const id = req.params.id;
-        const User = await user.findById(id);
+        const User = await user.findById(id).populate("posts").populate("saved");
         if (User) {
             const payload = {
                 _id: User._id,
@@ -131,11 +131,11 @@ export const getProfile = async (req, res) => {
                 username: User.username,
                 profilePicture: User.profilePicture,
                 bio: User.bio,
-                following: User.following,
+                following: User.following, 
                 followers: User.followers,
                 posts: User.posts,
             };
-            return res.status(200).json(payload);
+            return res.status(200).json(User);
         } else {
             return res.status(404).json({
                 message: "user not found",

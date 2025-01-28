@@ -83,12 +83,12 @@ function ChatWindow({ chat }) {
                         <div
                             className={`max-w-xs px-4 py-2 rounded-lg ${
                                 msg.sender == user._id
-                                    ? "bg-blue-500 text-white"
+                                    ? "bg-blue-800 text-white"
                                     : "bg-gray-200"
                             }`}
                         >
                             <p>{msg.message}</p>
-                            <span className="text-xs opacity-75 mt-1 block">
+                            <span className="text-[8px] opacity-75 mt-1 block">
                                 {new Date(msg.createdAt).toLocaleString()}
                             </span>
                         </div>

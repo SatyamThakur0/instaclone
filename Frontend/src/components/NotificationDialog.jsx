@@ -10,7 +10,7 @@ const NotificationDialog = ({ openNotiPanel, setOpenNotiPanel }) => {
             <DialogTrigger asChild></DialogTrigger>
             <DialogTitle />
             <DialogContent
-                className={`outline-none overflow-y-scroll flex flex-col h-[80vh] max-h-[80vh]`}
+                className={`outline-none overflow-y-scroll flex flex-col h-[80vh] max-h-[80vh] w-screen rounded-xl `}
                 onInteractOutside={() => setOpenNotiPanel(false)}
             >
                 <h1 className="text-center font-bold text-2xl">
@@ -19,7 +19,7 @@ const NotificationDialog = ({ openNotiPanel, setOpenNotiPanel }) => {
                 {notifications?.map((notification) => (
                     <div
                         key={notification._id}
-                        className="flex gap-3 items-center justify-between"
+                        className="flex gap-3 items-center justify-between text-wrap bord er-2 border-red-500 "
                     >
                         <div className="flex items-center gap-2">
                             <span className={`flex items-center gap-2 `}>
@@ -33,14 +33,14 @@ const NotificationDialog = ({ openNotiPanel, setOpenNotiPanel }) => {
                                     />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
-                                <Link className={`font-semibold`}>
-                                    {notification.reactedBy.username}
-                                </Link>
+                                <p>
+                                    <Link className={`font-semibold mr-1`}>
+                                        {notification.reactedBy.username}
+                                    </Link>
+                                    {notification.type == "like" ? "liked" : ""}{" "}
+                                    your post.
+                                </p>
                             </span>
-                            <p>
-                                {notification.type == "like" ? "lliked" : ""}{" "}
-                                your post.
-                            </p>
                         </div>
                         {/* <div className="h-[20px] w-[30px] object-cover"> */}
                         <img

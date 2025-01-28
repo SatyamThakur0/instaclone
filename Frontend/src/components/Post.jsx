@@ -148,6 +148,30 @@ const Post = ({ post }) => {
         }
     };
 
+    const setProfile = async () => {
+        dispatch(userActions.setProfile(null));
+        try {
+            const token = localStorage.getItem("token");
+            let res = await fetch(
+                `${import.meta.env.VITE_BACKEND_URL}/api/user/profile/${
+                    post.author._id
+                }`,
+                {
+                    headers: {
+                        "content-type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                    credentials: "include",
+                }
+            );
+            res = await res.json();
+            dispatch(userActions.setProfile(res));
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div
             className={`w-screen max-w-[450px] my-1 px-2 flex flex-col justify-center items-center h-fit border-b border-gray-400`}
@@ -156,7 +180,10 @@ const Post = ({ post }) => {
                 <span className={`flex w-full items-center gap-2 `}>
                     <Avatar
                         className="cursor-pointer"
-                        onClick={() => navigate(`/profile/${post.author._id}`)}
+                        onClick={() => {
+                            setProfile();
+                            navigate(`/profile/${post.author._id}`);
+                        }}
                     >
                         <AvatarImage src={post?.author?.profilePicture} />
                         <AvatarFallback>CN</AvatarFallback>

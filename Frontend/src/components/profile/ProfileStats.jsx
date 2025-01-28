@@ -1,6 +1,6 @@
 export default function ProfileStats({ profile, className = "" }) {
     return (
-      <div className={`flex justify-around md:justify-start space-x-4 ${className}`}>
+      <div className={`flex justify-around md:justify-start space-x-4 ${className} md:ml-3`}>
         <div className="text-center md:text-left">
           <span className="font-bold">{profile.posts.length}</span>
           <span className="block md:inline md:ml-1 text-gray-500">posts</span>

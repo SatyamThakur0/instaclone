@@ -19,7 +19,7 @@ userRouter.get("/users", getAllUsers);
 userRouter.post("/login", loginUser);
 userRouter.post("/signup", registerUser);
 userRouter.post("/logout", logout);
-userRouter.get("/profile/:id", isAuthenticated, getProfile);
+userRouter.get("/profile/:id", getProfile);
 userRouter.post("/suggested", isAuthenticated, getSuggestedUser);
 userRouter.post("/profile/saved/:id", isAuthenticated, getSavedPost);
 userRouter.post("/followorunfollow/:id", isAuthenticated, followOrUnfollow);

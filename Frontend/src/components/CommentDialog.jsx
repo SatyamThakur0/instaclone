@@ -52,7 +52,7 @@ const CommentDialog = ({
                 <DialogTitle />
                 <DialogContent
                     aria-describedby="dialog-description"
-                    className="outline-none"
+                    className="outline-none w-screen rounded-xl"
                     onInteractOutside={() => setOpen(false)}
                 >
                     <p
@@ -70,7 +70,7 @@ const CommentDialog = ({
                 <DialogTitle /> 
 
                 <DialogContent
-                    className={`outline-none flex flex-col gap-0 bg-[#eeeeee] p-0 h-[85vh] w-[450px]`}
+                    className={`outline-none flex flex-col gap-0 bg-[#eeeeee] p-0 h-[85vh]  w-screen rounded-xl`}
                     onInteractOutside={() => setOpen(false)}
                 >
                     <div
