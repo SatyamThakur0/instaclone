@@ -75,6 +75,7 @@ const router = createBrowserRouter([
     { path: "/signup", element: <Signup /> },
     { path: "/", element: <Home2 /> },
     { path: "/chat", element: <Chat /> },
+    { path: "/profile/:id/edit", element: <EditProfile /> },
     { path: "/profile/:id", element: <ProfilePage /> },
 ]);
 
