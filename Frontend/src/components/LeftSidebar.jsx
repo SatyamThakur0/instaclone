@@ -61,7 +61,7 @@ const LeftSidebar = () => {
             icon: (
                 <img
                     className="w-7 h-7 rounded-[20%]"
-                    src={user.profilePicture}
+                    src={user?.profilePicture}
                     alt=""
                 />
             ),

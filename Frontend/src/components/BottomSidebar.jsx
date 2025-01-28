@@ -48,7 +48,7 @@ const BottomSidebar = () => {
         {
             icon: (
                 <Avatar className="w-7 h-7">
-                    <AvatarImage className="w-7 h-7 rounded-full" src={user.profilePicture} />
+                    <AvatarImage className="w-7 h-7 rounded-full" src={user?.profilePicture} />
                     <AvatarFallback>ST</AvatarFallback>
                 </Avatar>
             ),
